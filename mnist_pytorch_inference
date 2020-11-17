@@ -1,0 +1,21 @@
+# FROM pytorch/pytorch
+FROM python:3.8
+# MAINTAINER Ashwin Prakash Nalwade
+
+MAINTAINER Ashwin Prakash Nalwade (apn308@nyu.edu)
+
+# RUN pip --no-cache-dir install torch torchvision
+
+RUN pip install --upgrade pip
+
+RUN pip install Flask 
+
+RUN pip install future nose mock coverage numpy flake8 
+
+RUN pip install torch==1.7.0+cpu torchvision==0.8.1+cpu torchaudio==0.7.0 -f https://download.pytorch.org/whl/torch_stable.html
+
+WORKDIR /vg-mnist/pytorch-cli
+
+ADD pytorch-mnist/main.py  /vg-mnist/pytorch-cli
+
+CMD [ "python", "main.py" ]
