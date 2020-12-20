@@ -82,6 +82,36 @@ end
 ```
 
 - Provisioning in vagrant using the shell.
+Us the ```-y``` option with ```apt-get``` to enable non-interactive installation. That is, no more "X amount of data would be downloaded on installing Y. Do you still want to continue? [Y|N]"
+```ruby
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+
+  config.vm.box = "ubuntu/bionic64"
+
+  
+   config.vm.provider "virtualbox" do |vb|
+     # Display the VirtualBox GUI when booting the machine
+     vb.gui = false
+
+     # Customize the amount of memory on the VM:
+     vb.memory = "2048"
+   end
+ 
+   config.vm.provision "shell", inline: <<-SHELL
+     sudo apt-get -y upgrade apt-get update
+     sudo apt-get -y install python3.8 python3.8-dev python3.8-distutils python3.8-venv
+     sudo apt-get -y install git-all python-dev 
+     curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+     python3.8 get-pip.py
+     pip install future nose mock coverage numpy flake8  
+     pip --no-cache-dir install torch torchvision
+   SHELL
+end
+
+```
 
 ## Troubleshooting
 
