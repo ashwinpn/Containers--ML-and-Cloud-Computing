@@ -31,7 +31,7 @@
 [    0.000000] Scanning 1 areas for low memory corruption
 [    0.000000] RAMDISK: [mem 0x35a67000-0x36d2afff]
 [    0.000000] ACPI: Early table checksum verification disabled
-[    0.000000] ACPI: RSDP 0x00000000000E0000 000024 (v02 VBOX  )
+[    0.000000] ACPI: RSDP 0x00000000000E0000 000024 (v02 VBOX  ) 
 [    0.000000] ACPI: XSDT 0x000000007FFF0030 00003C (v01 VBOX   VBOXXSDT 00000001 ASL  00000061)
 [    0.000000] ACPI: FACP 0x000000007FFF00F0 0000F4 (v04 VBOX   VBOXFACP 00000001 ASL  00000061)
 [    0.000000] ACPI: DSDT 0x000000007FFF0470 002325 (v02 VBOX   VBOXBIOS 00000002 INTL 20100528)
@@ -464,7 +464,8 @@ Welcome to [1mUbuntu 18.04.5 LTS[0m!
 [[0;32m  OK  [0m] Started ebtables ruleset management.
 [[0;32m  OK  [0m] Found device /dev/ttyS0.
 [[0;32m  OK  [0m] Listening on Load/Save RF Kill Switch Status /dev/rfkill Watch.
-[[0m[0;31m*     [0m] A start job is running for AppArmor initialization (11s / no limit)[K[[0;32m  OK  [0m] Started AppArmor initialization.
+[[0m[0;31m*     [0m] A start job is running for AppArmor initialization (11s / no limit)
+[K[[0;32m  OK  [0m] Started AppArmor initialization.
          Starting Load AppArmor profiles managed internally by snapd...
          Starting Initial cloud-init job (pre-networking)...
 [[0;32m  OK  [0m] Started Load AppArmor profiles managed internally by snapd.
@@ -653,7 +654,8 @@ cloud-init[671]: Generating public/private ecdsa key pair.
 [[0;32m  OK  [0m] Reached target Graphical Interface.
          Starting Update UTMP about System Runlevel Changes...
 [[0;32m  OK  [0m] Started Update UTMP about System Runlevel Changes.
-
+
+
 Ubuntu 18.04.5 LTS ubuntu-bionic ttyS0
 
 ubuntu-bionic login: [   70.466765] cloud-init[1020]: Cloud-init v. 20.3-2-g371b392c-0ubuntu1~18.04.1 running 'modules:config' at Fri, 30 Oct 2020 19:00:00 +0000. Up 66.31 seconds.
