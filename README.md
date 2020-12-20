@@ -1,4 +1,6 @@
 # Containers
+- Containers have become very important to deep learning as it is critical to leverage them to ensure scalability, now that computer scientists are capable of developing ML applications which can run seamlessly on smartphones too.
+![cont](https://github.com/ashwinpn/Containers/blob/main/resources/cool.png)
 
 # Docker
 
