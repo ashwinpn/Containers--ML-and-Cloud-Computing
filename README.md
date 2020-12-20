@@ -27,6 +27,11 @@
   
   Use docker start <CONTAINER_ID> instead of docker run
   ```
+- I initially used ```bash alpine ``` for my dockerfile, but ran into a lot of issues when I started building the docker image. 
+Specifically, I faced networking issues, memory errors and had to spend a lot of time with the ```bash pip install ``` commands because they were not running smoothly. 
+Thus, I decided against using alpine as I felt that the issues that came up due to its use defeated the purpose of using containers in the first place - 
+which is to make our job easier while building environments and running code. Also, I felt that the time spent debugging and dealing with errors does not 
+compensate for the small docker image size which alpine provides.
 ## Cases
 
 ### <ins>pytorch_mnist</ins>
