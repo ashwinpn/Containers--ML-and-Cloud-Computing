@@ -6,7 +6,7 @@
 
 ## Cases
 
-### pytorch_mnist
+### <ins>pytorch_mnist</ins>
 - Run
 ```bash
 docker build -t asn/pyt .
