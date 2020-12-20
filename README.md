@@ -82,7 +82,8 @@ end
 ```
 
 - Provisioning in vagrant using the shell.
-Us the ```-y``` option with ```apt-get``` to enable non-interactive installation. That is, no more "X amount of data would be downloaded on installing Y. Do you still want to continue? [Y|N]"
+
+Use the ```-y``` option with ```apt-get``` to enable non-interactive installation. That is, no more "X amount of data would be downloaded on installing Y. Do you still want to continue? [Y|N]"
 ```ruby
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
