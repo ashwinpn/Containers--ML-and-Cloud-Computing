@@ -1,4 +1,6 @@
 # Containers and Cloud Computing
+@ashwinpn
+
 - Containers have become very important to deep learning as it is critical to leverage them to ensure scalability, now that computer scientists are capable of developing ML applications which can run seamlessly on smartphones too.
 
 ![cont](https://github.com/ashwinpn/Containers/blob/main/resources/cool.png)
@@ -58,7 +60,8 @@ vagrant ssh
 
 vagrant provision
 ```
-- Configuring the vagrantfile.
+- Configuring the vagrantfile [vagrantfiles are written in Ruby]. Here, we provision docker - which means that we can start working with docker as soon as we start up using ``` vagrant up``` and ```vagrant ssh``` command.
+
 ```ruby
 Vagrant.configure("2") do |config|
 
