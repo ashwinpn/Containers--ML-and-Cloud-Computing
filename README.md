@@ -87,4 +87,14 @@ end
 
 # Kubernetes
 
+```bash
+kubectl create -f dply.yaml
+
+kubectl get pods
+
+kubectl get deployments
+
+kubectl expose deployment sentiment-inference-service --type=LoadBalancer --port 80 --target-port 8080
+```
+
 ## Troubleshooting
