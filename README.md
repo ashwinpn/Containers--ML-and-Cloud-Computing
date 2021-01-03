@@ -142,7 +142,7 @@ kubectl expose deployment sentiment-inference-service --type=LoadBalancer --port
 ```
 !chmod 755 imgnet/INSTALL.sh
 ``` 
-4. Install cuda, nvcc, gcc, and g++:
+4. Install <ins>cuda, nvcc, gcc, and g++</ins>:
 ```
 !./imgnet/INSTALL.sh
 ```
