@@ -131,8 +131,8 @@ kubectl expose deployment sentiment-inference-service --type=LoadBalancer --port
 ## Troubleshooting
 
 
-## Machine Learning
-# Running GPU profilers on the cloud [Google Colab Pro]
+# Machine Learning
+## Running GPU profilers on the cloud [Google Colab Pro]
 1. Change runtime type selecting GPU as hardware accelerator
 2. Git clone this repository:
 ```
