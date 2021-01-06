@@ -225,3 +225,6 @@ os.environ['PATH'] += ':/usr/local/cuda/bin'
 ```
 !nvprof python main.py -a alexnet -b 8 --epochs 1 --lr 0.01 <Training and Validation folders parent directory>
 ```
+
+## Accessing GPU's on the NYU Cluster
+![gpu](https://github.com/ashwinpn/Containers-and-Cloud-Computing/blob/main/resources/specifications.JPG)
