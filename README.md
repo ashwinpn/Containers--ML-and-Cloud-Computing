@@ -1,4 +1,5 @@
 # Containers and Cloud Computing
+Ashwin Nalwade.
 
 - Containers have become very important to deep learning as it is critical to leverage them to ensure scalability, now that computer scientists are capable of developing ML applications which can run seamlessly on smartphones too.
 
@@ -134,26 +135,31 @@ kubectl expose deployment sentiment-inference-service --type=LoadBalancer --port
 
 # Vagrant v/s Docker Comparison
 
-Setting up the project to work in vagrant and docker for the fist time took a while for both docker and
+Setting up the project to work in vagrant and docker for the first time took a while for both docker and
 vagrant, but for the subsequent times, starting up and running our project in docker was much more
-faster than vagrant - however, setting up the project workflow was better in vagrant. Both vagrant
-and docker have dedicated communities if you require any help for troubleshooting any issues, but the
+faster than vagrant - however, setting up the project workflow was better in vagrant. 
+
+Both vagrant and docker have dedicated communities if you require any help for troubleshooting any issues, but the
 docker documentation and forums are more user friendly and docker in general has many resources,
 tutorials, and guides available. For instance, one major disadvantage with vagrant is that there is a
 lesser scope for collaboration [even with Vagrant Cloud] - when working with docker, we can easily
 push our docker images to our Docker Hub repo, and your teammates/others can pull the container
 and run the application. Docker also has support for functions similar to git, where we can track
 different versions of a container, see the changes (diff) between the versions, and provides support for
-updating via commits. While provisioning can potentially get messy in both vagrant and docker [e.g.
+updating via commits. 
+
+While provisioning can potentially get messy in both vagrant and docker [e.g.
 pip install instructions - need to check conflicting dependencies and updates to eliminate probable
 errors], vagrant based provisioning can be a big headache because I personally had to spend about half
 an hour for debugging the provisioner shell in the vagrantfile, making sure that all packages had the
-suitable versions to enable working with each other. Regarding vagrant, while a completely virtualized
-system provides more isolation, it also comes at the cost of more resources being allocated to it [it
+suitable versions to enable working with each other. 
+
+Regarding vagrant, while a completely virtualized system provides more isolation, it also comes at the cost of more resources being allocated to it [it
 is heavier], and has minimum sharing capability. With docker we have less isolation [it has sufficient
 support to isolate processes from each other though], but the containers are lightweight (require fewer
-resources, and they share the same kernel). We cannot run completely different operating systems in
-containers like we do in virtual machines, however it is possible to run different distros [distributions] of
+resources, and they share the same kernel). 
+
+We cannot run completely different operating systems in containers like we do in virtual machines, however it is possible to run different distros [distributions] of
 Linux since they do share the same kernel. Talking about booting times, when we load a container we
 don’t have to start a new copy of the operating system like in a virtual machine, so booting times are
 smaller. Unlike virtual machines, we also do not have to pre-allocate a considerable amount of memory
@@ -178,7 +184,7 @@ capacity, we can have more applications which are running. On the other hand, va
 load a whole OS in the memory, and thus it will always lead to more consumption of resources.
 
 ## Case Study
-```We derive insights on performance by using the profile, cProfile, and pstats modules for profiling purposes.```
+We derive insights on performance by using the ```profile, cProfile```, and ```pstats``` modules for profiling purposes.
 
 - With docker it took seconds to start up, whereas for vagrant it took minutes.
 
