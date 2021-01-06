@@ -228,3 +228,6 @@ os.environ['PATH'] += ':/usr/local/cuda/bin'
 
 ## Accessing GPU's on the NYU Cluster
 ![gpu](https://github.com/ashwinpn/Containers-and-Cloud-Computing/blob/main/resources/specifications.JPG)
+
+## Activating environments, installing requirements, training on NYU Prince Cluster.
+![nyup](https://github.com/ashwinpn/Containers-and-Cloud-Computing/blob/main/resources/Training%20Time.JPG)
