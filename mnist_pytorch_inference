@@ -2,7 +2,7 @@
 FROM python:3.8
 # MAINTAINER Ashwin Prakash Nalwade
 
-MAINTAINER Ashwin Prakash Nalwade (apn308@nyu.edu)
+MAINTAINER Ashwin Prakash Nalwade 
 
 # RUN pip --no-cache-dir install torch torchvision
 
