@@ -128,6 +128,34 @@ kubectl get deployments
 
 kubectl expose deployment sentiment-inference-service --type=LoadBalancer --port 80 --target-port 8080
 ```
+ For the training part I used a ```pod``` object, but I also experimented using a job
+object since in real-life production environments, we deal with batch jobs too.
+For inference, I used a ```deployment object``` because we can have ```ReplicaSets``` and
+can thus ensure that the service is reliable [multiple replicas] and can also be
+scaled [That is, our deployments can stay up, remain healthy, and keep
+running automatically without the requirement of some manual intervention].
+
+Other advantages are:
+- We can rollout and rollback our services during deployment.
+- We can observe the status of each pod.
+- There is a facility for performing updates in a rolling manner.
+- Unlike a deployment, pods are not rescheduled in the case of termination of the pod or node failure.
+
+We create a ```PersistentVolumeClaim``` and Kubernetes automatically
+provisions a persistent disk for us. We request a 2GiB disk and configure the
+access mode so that it can be mounted in a read-write-once manner by one
+node. When we create a ```PersistentVolumeClaim``` object, Kubernetes
+dynamically creates a corresponding ```PersistentVolume``` object.
+
+This ```PersistentVolume``` is backed by an empty and new Compute Engine
+persistent disk. We thus use this disk in a pod by using the claim as a volume.
+Since we use ```PersistentVolumes```, we can transfer data between pods
+[since they have access to the same storage space - depending on the
+access mode we have selected, either a single pod or multiple pods can have
+ReadWrite access at the same time], and along with git, docker, and Docker
+Hub, we were able to use the trained model file in the inference service
+
+
 ## Running on GCP with Google Kubernetes Engine
 ![k8s](https://github.com/ashwinpn/Containers-and-Cloud-Computing/blob/main/resources/hw4_16.JPG)
 
