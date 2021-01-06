@@ -127,8 +127,72 @@ kubectl get deployments
 
 kubectl expose deployment sentiment-inference-service --type=LoadBalancer --port 80 --target-port 8080
 ```
+## Running on GCP with Google Kubernetes Engine
+![k8s](https://github.com/ashwinpn/Containers-and-Cloud-Computing/blob/main/resources/hw4_16.JPG)
 
 ## Troubleshooting
+
+# Vagrant v/s Docker Comparison
+
+Setting up the project to work in vagrant and docker for the fist time took a while for both docker and
+vagrant, but for the subsequent times, starting up and running our project in docker was much more
+faster than vagrant - however, setting up the project workflow was better in vagrant. Both vagrant
+and docker have dedicated communities if you require any help for troubleshooting any issues, but the
+docker documentation and forums are more user friendly and docker in general has many resources,
+tutorials, and guides available. For instance, one major disadvantage with vagrant is that there is a
+lesser scope for collaboration [even with Vagrant Cloud] - when working with docker, we can easily
+push our docker images to our Docker Hub repo, and your teammates/others can pull the container
+and run the application. Docker also has support for functions similar to git, where we can track
+different versions of a container, see the changes (diff) between the versions, and provides support for
+updating via commits. While provisioning can potentially get messy in both vagrant and docker [e.g.
+pip install instructions - need to check conflicting dependencies and updates to eliminate probable
+errors], vagrant based provisioning can be a big headache because I personally had to spend about half
+an hour for debugging the provisioner shell in the vagrantfile, making sure that all packages had the
+suitable versions to enable working with each other. Regarding vagrant, while a completely virtualized
+system provides more isolation, it also comes at the cost of more resources being allocated to it [it
+is heavier], and has minimum sharing capability. With docker we have less isolation [it has sufficient
+support to isolate processes from each other though], but the containers are lightweight (require fewer
+resources, and they share the same kernel). We cannot run completely different operating systems in
+containers like we do in virtual machines, however it is possible to run different distros [distributions] of
+Linux since they do share the same kernel. Talking about booting times, when we load a container we
+don’t have to start a new copy of the operating system like in a virtual machine, so booting times are
+smaller. Unlike virtual machines, we also do not have to pre-allocate a considerable amount of memory
+and hardware resources when working with containers.
+
+## Summary
+- Docker containers are faster to start (and also to stop). One of the reasons behind this is probably
+the fact that docker leverages the existing host OS [which already has major system processes
+initialized], whereas with vagrant we have to load a whole vm image [and also initialize major
+system processes].
+
+- With regards to isolation, vagrant fares better. But with docker we can still get isolation at the
+user level since a docker container runs as an isolated process. Also, we can collaborate better by
+using Docker Hub.
+
+- Vagrant in general is heavy, as compared to docker which is lightweight because it includes only
+those libraries which are extremely necessary to the application as a part of the container image.
+
+- Docker will require fewer amount of resources than vagrant, since we only need to load the libraries
+which are necessary/essential for the application. Therefore, for a given value for computing
+capacity, we can have more applications which are running. On the other hand, vagrant has to
+load a whole OS in the memory, and thus it will always lead to more consumption of resources.
+
+## Case Study
+```We derive insights on performance by using the profile, cProfile, and pstats modules for profiling purposes.```
+
+- With docker it took seconds to start up, whereas for vagrant it took minutes.
+
+- The total execution time on docker was ```24m 38s 19ms```, compared to the total execution time on
+vagrant, which was ```27m 08s 34ms```, and thus on docker it was smaller.
+
+- Average training time per epoch on docker was ```2m 27s 78ms```, while the average training time per
+epoch on vagrant was ```2m 42s 79ms```. Best of 3 average training time on docker was ```2m 25s 41ms```,
+and on vagrant it was ```2m 41s 07ms```.
+
+- Average memory usage per epoch on docker was ```peak memory: 450.03 MiB```, whereas for vagrant
+it was ```peak memory: 448.63 MiB```. The difference here was negligible.
+
+- Regarding line-by-line analysis for the application code: for docker we had ```4616095 function calls (4612290 primitive calls) in 11.988 seconds```, and for vagrant we had ```4616095 function calls (4612290 primitive calls) in 16.632 seconds```.
 
 
 # Machine Learning
