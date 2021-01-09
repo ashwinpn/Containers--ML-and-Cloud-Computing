@@ -5,6 +5,12 @@ Ashwin Nalwade.
 
 ![cont](https://github.com/ashwinpn/Containers/blob/main/resources/cool.png)
 
+# Technologies
+- Google Cloud Platform [GCP], Amazon Web Services [AWS], IBM Cloud.
+- Docker, Kubernetes, Vagrant, Slurm [For High Perfromance Cluster Computing].
+- Python, Gunicorn, Flask, PyTorch, Tensorflow, Jupyter Notebook.
+- CSS, HTML, JavaScript, Bash.
+
 # Docker
 
 ## Troubleshooting
