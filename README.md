@@ -1,4 +1,4 @@
-# Containers and Cloud Computing
+# Containers, ML and Cloud Computing
 Ashwin Nalwade.
 
 - Containers have become very important to deep learning as it is critical to leverage them to ensure scalability, now that computer scientists are capable of developing ML applications which can run seamlessly on smartphones too.
@@ -189,7 +189,9 @@ But, it did not work. Another method that I tried was to add an ```externalIPs``
 specification in the ```.yaml``` file, but that did not work either. After trying some
 more commands and going through the kubernetes website, I learned that
 something related was mentioned here :
+
 https://kubernetes.io/docs/tutorials/stateless-application/expose-external-ip-address/
+
 And that’s why I decided to work on Google Kubernetes Engine - did not face
 any problems there (If the external ```IP``` address is still shown as ```<pending>```,
 wait for a minute and enter the same command again, the issue is resolved).
