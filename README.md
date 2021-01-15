@@ -196,7 +196,7 @@ And that’s why I decided to work on Google Kubernetes Engine - did not face
 any problems there (If the external ```IP``` address is still shown as ```<pending>```,
 wait for a minute and enter the same command again, the issue is resolved).
 
-![](https://github.com/ashwinpn/Containers-and-Cloud-Computing/blob/main/resources/hw4_12.JPG)
+![](https://github.com/ashwinpn/Containers-and-Cloud-Computing/blob/main/resources/hw4_23.JPG)
   
 - Different types of services - ```ClusterIP, LoadBalancer, ExternalName, NodePort.```
 
