@@ -7,8 +7,8 @@ Ashwin Nalwade.
 
 # Technologies
 - Google Cloud Platform [GCP], Amazon Web Services [AWS], IBM Cloud.
-- Docker, Kubernetes, Vagrant, Slurm [For High Perfromance Cluster Computing].
-- Python, Gunicorn, Flask, PyTorch, Tensorflow, Jupyter Notebook.
+- Docker, Kubernetes, Vagrant, Slurm [For High Perfromance Cluster Computing - Workload Management].
+- Python, Gunicorn, Flask, PyTorch, Pandas, Tensorflow, Jupyter Notebook, CUDA.
 - CSS, HTML, JavaScript, Bash.
 
 # Docker
