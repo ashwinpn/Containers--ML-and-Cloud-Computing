@@ -165,6 +165,53 @@ Hub, we were able to use the trained model file in the inference service
 ## Running on GCP with Google Kubernetes Engine
 ![k8s](https://github.com/ashwinpn/Containers-and-Cloud-Computing/blob/main/resources/hw4_16.JPG)
 
+## Observations and Experimentations
+
+- I worked with kubernetes on my local machine (via ```minikube```), 
+
+![](https://github.com/ashwinpn/Containers-and-Cloud-Computing/blob/main/resources/hw4_5.JPG) 
+
+on the terminal present at the kubernetes website (```Katacoda```), and also on Google
+Kubernetes Engine. While working with Kubernetes on my local machine and
+also on the kubernetes website terminal (Katacoda), there were some issues
+with the ```LoadBalancer type```. It was always showing the ```EXTERNAL-IP``` as
+```<pending>```
+
+![](https://github.com/ashwinpn/Containers-and-Cloud-Computing/blob/main/resources/hw4_11.JPG)
+
+and the service cannot process any test image without the ```EXTERNAL-IP```, so
+the progress had stalled. I tried the following to try and get the ```IP```:
+
+![](https://github.com/ashwinpn/Containers-and-Cloud-Computing/blob/main/resources/hw4_12.JPG)
+![](https://github.com/ashwinpn/Containers-and-Cloud-Computing/blob/main/resources/hw4_13.JPG)  
+ 
+But, it did not work. Another method that I tried was to add an ```externalIPs```
+specification in the ```.yaml``` file, but that did not work either. After trying some
+more commands and going through the kubernetes website, I learned that
+something related was mentioned here :
+https://kubernetes.io/docs/tutorials/stateless-application/expose-external-ip-address/
+And that’s why I decided to work on Google Kubernetes Engine - did not face
+any problems there (If the external ```IP``` address is still shown as ```<pending>```,
+wait for a minute and enter the same command again, the issue is resolved).
+
+![](https://github.com/ashwinpn/Containers-and-Cloud-Computing/blob/main/resources/hw4_12.JPG)
+  
+- Different types of services - ```ClusterIP, LoadBalancer, ExternalName, NodePort.```
+
+    1] ``` ClusterIP``` is the default kubernetes service, and applications within the cluster can access it, but external applications cannot.
+
+    2]  With ```NodePort```, we can direct any access requests to some particular port that has been opened on all nodes, but we can only have one service corresponding to one port.
+
+    3] With ```LoadBalancer```, we can directly expose the service. This is the one which I used.
+
+    4] Also read about ```ingress```, using which we can manage external access requests without the need for creating ```LoadBalancer``` / exposing all services present on a node.
+
+- Became familiar with ```secrets``` which are useful for dealing with
+containers (pulling containers) which are present in private Docker Hub
+repositories. Using secrets, we can also manage secure communication
+channels, keep and handle confidential data like ssh keys, passwords,
+and access tokens for OAuth.
+
 ## Troubleshooting
 
 # Vagrant v/s Docker Comparison
