@@ -310,7 +310,23 @@ os.environ['PATH'] += ':/usr/local/cuda/bin'
 ```
 
 ## Accessing GPU's on the NYU Cluster
+- A GPU request [Unless you have already obtained access to specifc ones]
+```bash
+[NYUNetID@log-0 ~]$ srun --gres=gpu:1 --pty /bin/bash
+```
 ![gpu](https://github.com/ashwinpn/Containers-and-Cloud-Computing/blob/main/resources/specifications.JPG)
 
 ## Activating environments, installing requirements, training on NYU Prince Cluster.
 ![nyup](https://github.com/ashwinpn/Containers-and-Cloud-Computing/blob/main/resources/Training%20Time.JPG)
+
+- First, login to the bastion host, and then ssh into the cluster.
+```bash
+ssh NYUNetID@gw.hpc.nyu.edu
+ssh NYUNetID@prince.hpc.nyu.edu
+```
+
+- You can get acces to three filesystems: ```/home, /scratch, and /archive```.
+
+```Scratch``` is a file system mounted on Prince that is connected to the compute nodes where we can upload files faster. 
+Note that the content gets periodically flushed. ```/home``` and ```/scratch``` are separate filesystems in separate places, 
+but you should use ```/scratch``` to store your files.
