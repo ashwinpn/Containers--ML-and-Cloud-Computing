@@ -219,13 +219,14 @@ and access tokens for OAuth.
 - <ins>The difference betwen ```kubectl create``` and ```kubectl apply```</ins>
 
 ```kubectl create``` is an Imperative Management approach. Here we tell the Kubernetes API what we want to create/replace/delete, not how we want our K8s cluster to look like. 
-On the other hand, ```kubectl apply``` is an Declarative Management approach, where changes that you may have applied to a live object (i.e. through scale) are "maintained" even if other changes are applied to the object. Also, When running in a CI script, we can potentially face trouble with the imperative appraoch as ```create``` will raise an error if the resource already exists. To put it simply,
+On the other hand, ```kubectl apply``` is an Declarative Management approach, where changes that you may have applied to a live object (i.e. through scale) are "maintained" even if other changes are applied to the object. Also, When running in a CI script, we can potentially face trouble with the imperative approach as ```create``` will raise an error if the resource already exists. To put it simply,
 
 ```apply``` makes incremental changes to an existing object.
 
 ```create``` creates a whole new object (previously non-existing / deleted).
 
 - <ins> If pods are stuck in terminiating status </ins>
+
 Delete pods forcefully using:
 
 ```bash
